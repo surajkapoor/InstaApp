@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instagram</title>
+<link href="/static/main.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<a href = '/instagram' id = 'header-name'>Instagram</a>	
+		<form method = 'post'>	
+			<input onfocus="this.value=''" onblur="this.value='#tag search'" type = 'text' name = 'tag' id = 'tag-search' value = '#tag search'></input>
+		</form>
+	<div>	
+		<input type="submit" id = "submit">
+	</div>		
+<div id = "header-bar"></div>		
+<div id = "container">
+{% for i in instagrams %}				
+<ul>
+	<li id= 'instagram'>
+		<div class="roll">		
+			<IMG class="on" img src='{{i[0]}}'>
+			<IMG class="off" img src="http://f.cl.ly/items/321322043C0Y2g0R2K0g/smallerheart.jpg">
+		</div>		
+		<div id ="caption">{{i[1]}}</div>
+		<div id = "username">{{i[2]}}</div>
+		<div id = "likes">{{i[3]}}</div>
+	</li>
+</ul>	
+{% endfor %}
+{{data}}						
+</div>	
+</body>		
+</html>	
